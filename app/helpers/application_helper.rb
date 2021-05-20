@@ -28,4 +28,21 @@ module ApplicationHelper
       number_to_currency(amount.to_i / 100.0, options)
     end
 
+  def plan_for_id(id)
+
+    if id == "prod_JMJfS5IAJXcJ41"
+      id = "Small Monthly"
+
+    elsif id == "prod_JMJhwRjwqFI5gS"
+      id = "Small Annual"
+      
+    elsif id == "prod_JMJi7tfTkjxms2"
+      id = "Large Monthly"
+
+    elsif id == "prod_JMJhFFrpDJzhmg"
+      id = "Large Annual"
+    end
+  
+  end
+
 end

@@ -38,6 +38,7 @@
                 <%= link_to "Admin Area", madmin_root_path, class: "dropdown-item" %>
               <% end %>
               <%= link_to "Settings", edit_user_registration_path, class: "dropdown-item" %>
+              <%= link_to "Billing", subscription_path, class: "dropdown-item" %>
               <div class="dropdown-divider"></div>
               <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
