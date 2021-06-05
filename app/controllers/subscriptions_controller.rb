@@ -29,6 +29,11 @@ class SubscriptionsController < ApplicationController
         redirect_to subscription_path, notice: "You have successfully changed plans."
     end
 
+    def destroy
+        current_user.subscription.cancel
+        redirect_to subscription_path, notice: "Your subscription has been canceled."
+    end
+
     private
     
         def set_plan

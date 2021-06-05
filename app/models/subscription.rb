@@ -21,6 +21,16 @@ class Subscription < ApplicationRecord
     ["past_due", "incomplete"].include?(status)
   end
 
+  def cancel
+    sub = Stripe::Subscription.update(stripe_id, { cancel_at_period_end: true })
+    update(ends_at: Time.at(sub.cancel_at))
+  end
+
+  def cancel_now!
+    sub = Stripe::Subscription.delete(stripe_id)
+    update(status: 'canceled', ends_at: Time.at(sub.ended_at))
+  end
+
   def swap(plan)
     stripe_sub = stripe_subscription
 
