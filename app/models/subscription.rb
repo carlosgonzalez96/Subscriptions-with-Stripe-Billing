@@ -31,6 +31,13 @@ class Subscription < ApplicationRecord
     update(status: 'canceled', ends_at: Time.at(sub.ended_at))
   end
 
+  def resume
+    if Time.current < ends_at
+      Stripe::Subscription.update(stripe_id, cancel_at_period_end: false)
+      update(status: 'active', ends_at: nil)
+    end
+  end
+
   def swap(plan)
     stripe_sub = stripe_subscription
 
