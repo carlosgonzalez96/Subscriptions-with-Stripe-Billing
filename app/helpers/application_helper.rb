@@ -30,16 +30,16 @@ module ApplicationHelper
 
   def plan_for_id(id)
 
-    if id == "prod_JMJfS5IAJXcJ41"
+    if id == "price_1Ijb2WDXobRpcK7sewm9ZT71"
       id = "Small Monthly"
 
-    elsif id == "prod_JMJhwRjwqFI5gS"
+    elsif id == "price_1Ijb3fDXobRpcK7siYcTzSMB"
       id = "Small Annual"
       
-    elsif id == "prod_JMJi7tfTkjxms2"
+    elsif id == "price_1Ijb4fDXobRpcK7shsMyPWtp"
       id = "Large Monthly"
 
-    elsif id == "prod_JMJhFFrpDJzhmg"
+    elsif id == "price_1Ijb4FDXobRpcK7sCpY5AKYX"
       id = "Large Annual"
     end
   

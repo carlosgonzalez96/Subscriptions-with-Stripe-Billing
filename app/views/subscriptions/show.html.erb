@@ -7,7 +7,7 @@
     <p>Your Subscription has been canceled and you have access until <%= subscription.ends_at.to_date.to_s(:long) %></p>
     <p><%= link_to "Resume subscription", resume_subscription_path, method: :patch %></p>
 <% elsif @subscription && @subscription.active? %>
-    <p>You are subscribed to the <strong><%= plan_for_id @subscription.stripe_plan %></strong> plan.</p>
+    <p>You are subscribed to the <strong><%=  plan_for_id @subscription.stripe_plan %></strong> plan.</p>
     <p><%= link_to "Change plan", edit_subscription_path %></p>
 <% else %>
     <p>You are not subscribed. <%= link_to "Subscribe", pricing_path %></p>
